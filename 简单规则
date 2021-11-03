@@ -10,3 +10,8 @@ $(target):$(obj)
   $(CC) $(obj) -o $(target)
 %.o:%.c
   $(CC) -c $< -o $@
+
+# 如果目录下有一个clean的文件，make clean会出错，需要加phony
+.PHONY:clean
+clean:
+  -rm $(obj) $(target) -f # rm如果执行失败，继续执行
