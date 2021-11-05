@@ -2,7 +2,7 @@
 target=app
 
 src=$(wildcard ./*.c)
-obj=$(patsubst ./%.c, ./%.o, $(src))
+obj=$(patsubst %.c, %.o, $(src))
 
 CC=gcc
 CPPFLAGS=-I
